@@ -1,13 +1,15 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 group 'com.github.snowpyon'
-version '1.0.0'
+version '1.1.0'
 
 apply plugin: 'java'
 
 sourceCompatibility = targetCompatibility = 1.8
 
 repositories {
+    mavenCentral()
+    jcenter()
 
     // Spigot API
     maven {
@@ -45,6 +47,6 @@ dependencies {
 
 processResources {
     inputs.files 'build.gradle'
-    from sourceSets.main.resources.srcDirs
+    from sourceSets.main.java.srcDirs
     filter(ReplaceTokens, tokens: [version: version])
 }

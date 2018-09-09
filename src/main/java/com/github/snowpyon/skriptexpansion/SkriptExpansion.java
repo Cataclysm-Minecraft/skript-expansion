@@ -26,7 +26,7 @@ public class SkriptExpansion extends PlaceholderExpansion {
 
     @Override
     public String getVersion() {
-        return "1.1.0";
+        return "@version@";
     }
 
     @Override
