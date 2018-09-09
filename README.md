@@ -19,4 +19,4 @@ Use Skript variables in any plugin that supports PlaceholderAPI.
 |  Replacement  |  Usage  |
 |  -----------  |  -----  |
 |  player's uuid, uuid of player, uuid  |  %skript_test::{uuid}%  |
-|  player's name, name of player, player, name  |  %skript_test::{player}  |
+|  player's name, name of player, player, name  |  %skript_test::{player}%  |

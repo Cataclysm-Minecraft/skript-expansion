@@ -1,0 +1,50 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+group 'com.github.snowpyon'
+version '1.0.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = targetCompatibility = 1.8
+
+repositories {
+
+    // Spigot API
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+
+    // PlaceholderAPI
+    maven {
+        url 'http://repo.extendedclip.com/content/repositories/placeholderapi/'
+    }
+
+    // JitPack (Skript API)
+    maven {
+        url 'https://jitpack.io/'
+    }
+
+}
+
+dependencies {
+
+    // PlaceholderAPI
+    implementation 'me.clip:placeholderapi:2.9.2'
+
+    // Paper API
+    implementation('org.spigotmc:spigot-api:1.13-R0.1-SNAPSHOT') {
+        exclude group: 'net.md-5'
+    }
+
+    // Skript
+    implementation('com.github.SkriptLang:Skript:dev37c') {
+        transitive = false
+    }
+
+}
+
+processResources {
+    inputs.files 'build.gradle'
+    from sourceSets.main.resources.srcDirs
+    filter(ReplaceTokens, tokens: [version: version])
+}
