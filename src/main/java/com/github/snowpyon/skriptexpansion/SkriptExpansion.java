@@ -26,7 +26,7 @@ public class SkriptExpansion extends PlaceholderExpansion {
 
     @Override
     public String getVersion() {
-        return "@version@";
+        return "1.2.0";
     }
 
     @Override
@@ -37,7 +37,7 @@ public class SkriptExpansion extends PlaceholderExpansion {
     @Override
     public String onPlaceholderRequest(Player p, String params) {
         String varName = Replacement.applyAll(params, p, UUID_REPLACEMENT, NAME_REPLACEMENT, DISPLAY_NAME_REPLACEMENT);
-        return Classes.toString(Variables.getVariable(varName, null, false));
+        return Classes.toString(Variables.getVariable(varName.toLowerCase(), null, false));
     }
 
 }

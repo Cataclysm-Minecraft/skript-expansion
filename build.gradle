@@ -31,10 +31,10 @@ repositories {
 dependencies {
 
     // PlaceholderAPI
-    implementation 'me.clip:placeholderapi:2.9.2'
+    implementation 'me.clip:placeholderapi:2.10.9'
 
     // Paper API
-    implementation('org.spigotmc:spigot-api:1.13-R0.1-SNAPSHOT') {
+    implementation('org.spigotmc:spigot-api:1.16.3-R0.1-SNAPSHOT') {
         exclude group: 'net.md-5'
     }
 
